@@ -3,22 +3,25 @@
 using namespace std;
 
 int main(){
-    int number,factors = 0;
-    cin>>number;
 
-    //Main condition for testing prime is factor is greater than 1 then  it's not prime
-    for(int i = 2; i<number; i++){
-        if(number%i==0){
-            factors++;
+    int limit;//the number upto which prime number should be printed
+    cin>>limit;
+
+    for(int i =2; i<limit; i++){
+        
+        //Code to check whether i is prime or not
+        int factorcounter = 0;
+        for(int j = 2; j<i; j++){
+            if(i%j==0){
+                factorcounter++;
+                break;
+            }
+        }
+
+        //printing if it's prime
+        if(factorcounter==0){
+            cout<<i<<endl;
         }
     }
-    if(factors == 0){
-        cout<<"The number is prime"<<endl;
-    }
-    else{
-        cout<<"not prime";
-    }
-    
-
     return 0;
 }
